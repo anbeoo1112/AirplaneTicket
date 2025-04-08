@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightGrey"
@@ -10,22 +10,25 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/ll_main_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_header"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
                 android:background="@drawable/blue_bg_bottom">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/iv_world_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -35,7 +38,7 @@
                     app:srcCompat="@drawable/world" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/iv_profile_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -45,7 +48,7 @@
                     app:srcCompat="@drawable/profile" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -53,34 +56,35 @@
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_profile_icon"
+                    app:layout_constraintStart_toEndOf="@+id/iv_profile_icon"
+                    app:layout_constraintTop_toTopOf="@+id/iv_profile_icon" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/iv_notification_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                    app:layout_constraintTop_toTopOf="@+id/imageView3"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_profile_icon"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_world_icon"
+                    app:layout_constraintTop_toTopOf="@+id/iv_profile_icon"
                     app:srcCompat="@drawable/bell_icon" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tv_header_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Let's explore the world\n with us!!!"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                    app:layout_constraintStart_toStartOf="@+id/imageView3"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_world_icon"
+                    app:layout_constraintStart_toStartOf="@+id/iv_profile_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_profile_icon" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/ll_search_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
@@ -90,19 +94,21 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/tv_from_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_from"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/light_grey_bg">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/iv_from_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,42 +117,44 @@
                         app:srcCompat="@drawable/from_ic" />
 
                     <Spinner
-                        android:id="@+id/fromSP"
+                        android:id="@+id/sp_from"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/imageView5"
+                        app:layout_constraintStart_toEndOf="@id/iv_from_icon"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar"
+                        android:id="@+id/pb_from"
                         style="?android:attr/progressBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
-                        app:layout_constraintStart_toEndOf="@id/imageView5"
+                        app:layout_constraintStart_toEndOf="@id/iv_from_icon"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
+                    android:id="@+id/tv_to_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="To"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_to"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/light_grey_bg">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/iv_to_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,298 +163,37 @@
                         app:srcCompat="@drawable/from_ic" />
 
                     <Spinner
-                        android:id="@+id/toSP"
+                        android:id="@+id/sp_to"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/imageView6"
+                        app:layout_constraintStart_toEndOf="@id/iv_to_icon"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/ProgressBar2"
+                        android:id="@+id/pb_to"
                         style="?android:attr/progressBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
-                        app:layout_constraintStart_toEndOf="@id/imageView6"
+                        app:layout_constraintStart_toEndOf="@id/iv_to_icon"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
-                        android:layout_weight="0.5"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Adults"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/light_grey_bg"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:id="@+id/imageView7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/passenger_ic" />
-
-                            <TextView
-                                android:id="@+id/tvDecreaseAdult"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="-"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tvAdult"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="1 Adult"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tvIncreaseAdult"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="+"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_weight="0.5"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Children"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/light_grey_bg"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:id="@+id/imageView8"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/passenger_ic" />
-
-                            <TextView
-                                android:id="@+id/tvDecreaseChild"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="-"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tvChild"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="1 Child"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tvIncreaseChild"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="+"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="12dp"
-                        android:layout_weight="0.5"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Departure Date"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/light_grey_bg"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView9"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/calendar_ic" />
-
-                            <TextView
-                                android:id="@+id/tvDepartureDate"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="8dp"
-                                android:gravity="center_vertical"
-                                android:hint="Select Date" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_weight="0.5"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Return Date"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/light_grey_bg"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView10"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/calendar_ic" />
-
-                            <TextView
-                                android:id="@+id/tvReturnDate"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="8dp"
-                                android:gravity="center_vertical"
-                                android:hint="Select Date" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Class"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp"/>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/light_grey_bg">
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/seat_black_ic" />
-
-                    <Spinner
-                        android:id="@+id/classSP"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/imageView11"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBar3"
-                        style="?android:attr/progressBarStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.498"
-                        app:layout_constraintStart_toEndOf="@id/imageView11"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.5" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnSearch"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/blue_bg"
-                    android:text="Search Flights"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <!-- Additional IDs for other views can be added similarly -->
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/cnb_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        tools:ignore="MissingConstraints"
         android:background="@color/white"
         android:elevation="3dp"
         android:padding="4dp"
@@ -458,5 +205,5 @@
         app:cnb_unselectedColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

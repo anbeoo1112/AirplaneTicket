@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/cl_header"
         android:layout_width="match_parent"
         android:layout_height="135dp"
         android:background="@drawable/blue_bg_bottom"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iv_world_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -36,7 +36,7 @@
             app:srcCompat="@drawable/world" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/iv_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -46,6 +46,7 @@
             app:srcCompat="@drawable/back" />
 
         <TextView
+            android:id="@+id/tv_header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -53,9 +54,9 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="@id/imageView3"
-            app:layout_constraintBottom_toBottomOf="@id/imageView3"
-            app:layout_constraintStart_toEndOf="@id/imageView3" />
+            app:layout_constraintTop_toTopOf="@id/iv_back_button"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back_button"
+            app:layout_constraintStart_toEndOf="@id/iv_back_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar

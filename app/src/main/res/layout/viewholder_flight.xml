@@ -11,92 +11,91 @@
     android:background="@drawable/white_bg">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/iv_flight_logo"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:scaleType="fitXY"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_flight_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="time"
         android:textColor="@color/blue"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_flight_logo"
+        app:layout_constraintStart_toStartOf="@+id/iv_flight_logo"
+        app:layout_constraintTop_toBottomOf="@+id/iv_flight_logo" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/iv_flight_path"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flight_time"
         app:srcCompat="@drawable/line_airple_blue" />
 
     <TextView
-        android:id="@+id/fromTxt"
+        android:id="@+id/tv_flight_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/from"
-        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintEnd_toStartOf="@+id/iv_flight_path"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_flight_time" />
 
     <TextView
-        android:id="@+id/toTxt"
+        android:id="@+id/tv_flight_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/to"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/iv_flight_path"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flight_time" />
 
     <TextView
-        android:id="@+id/fromShortTxt"
+        android:id="@+id/tv_flight_from_short"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="From"
         android:textStyle="bold"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/fromTxt"
-        app:layout_constraintStart_toStartOf="@+id/fromTxt"
-        app:layout_constraintTop_toBottomOf="@+id/fromTxt" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_flight_from"
+        app:layout_constraintStart_toStartOf="@+id/tv_flight_from"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flight_from" />
 
     <TextView
-        android:id="@+id/toShortTxt"
+        android:id="@+id/tv_flight_to_short"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="To"
         android:textStyle="bold"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/toTxt"
-        app:layout_constraintStart_toStartOf="@+id/toTxt"
-        app:layout_constraintTop_toBottomOf="@+id/toTxt" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_flight_to"
+        app:layout_constraintStart_toStartOf="@+id/tv_flight_to"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flight_to" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/iv_flight_dash_line"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/iv_flight_path"
         app:srcCompat="@drawable/dash_line" />
 
     <TextView
-        android:id="@+id/priceTxt"
+        android:id="@+id/tv_flight_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -107,10 +106,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_flight_dash_line" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/iv_flight_seat_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -118,17 +117,17 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintTop_toBottomOf="@+id/iv_flight_dash_line"
         app:srcCompat="@drawable/seat_blue" />
 
     <TextView
-        android:id="@+id/classTxt"
+        android:id="@+id/tv_flight_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Class"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView15"
-        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+        app:layout_constraintStart_toEndOf="@+id/iv_flight_seat_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_flight_seat_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
