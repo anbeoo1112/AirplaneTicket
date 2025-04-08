@@ -13,7 +13,16 @@
         android:theme="@style/Theme.AirplaneTicket"
         tools:targetApi="31">
         <activity
+            android:name=".SeatListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
