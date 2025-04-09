@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "913558997398",
+    "project_id": "bookingapp-8fdf6",
+    "storage_bucket": "bookingapp-8fdf6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913558997398:android:13da4a3b8ac16d3d8135b7",
+        "android_client_info": {
+          "package_name": "com.example.airplaneticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWWzV2Go4utMvQ8_0N-8IbHsbPQ2aFeR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913558997398:android:116fda1678d096458135b7",
+        "android_client_info": {
+          "package_name": "com.example.booking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWWzV2Go4utMvQ8_0N-8IbHsbPQ2aFeR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913558997398:android:700d17044038d3c78135b7",
+        "android_client_info": {
+          "package_name": "com.example.bookingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWWzV2Go4utMvQ8_0N-8IbHsbPQ2aFeR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
