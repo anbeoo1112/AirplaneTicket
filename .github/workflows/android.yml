@@ -1,0 +1,52 @@
+name: Android CI with Auto Merge PR
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Run tests with Gradle
+      run: ./gradlew test
+
+    - name: Merge Pull Request if tests pass
+      if: success() && (github.event.pull_request.base.ref == 'main' || github.event.pull_request.base.ref == 'master')
+      run: |
+        echo "Tests passed. Proceeding with merge."
+
+        curl -X PUT \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"commit_title":"Automated Merge by GitHub Actions","commit_message":"Merging after passing CI tests","merge_method":"merge"}' \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
+
+        echo "Merge completed."
