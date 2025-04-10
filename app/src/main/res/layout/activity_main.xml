@@ -111,7 +111,7 @@
                         app:srcCompat="@drawable/from_ic" />
 
                     <Spinner
-                        android:id="@+id/fromSP"
+                        android:id="@+id/fromSp"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
@@ -121,10 +121,10 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar"
+                        android:id="@+id/progressBarFrom"
                         style="?android:attr/progressBarStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="14dp"
+                        android:layout_height="12dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
@@ -155,7 +155,7 @@
                         app:srcCompat="@drawable/from_ic" />
 
                     <Spinner
-                        android:id="@+id/toSP"
+                        android:id="@+id/toSp"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
@@ -165,7 +165,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/ProgressBar2"
+                        android:id="@+id/ProgressBarTo"
                         style="?android:attr/progressBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                                 app:srcCompat="@drawable/passenger_ic" />
 
                             <TextView
-                                android:id="@+id/tvDecreaseAdult"
+                                android:id="@+id/minusAdultBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
@@ -230,7 +230,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tvIncreaseAdult"
+                                android:id="@+id/plusAdultBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
@@ -270,7 +270,7 @@
                                 app:srcCompat="@drawable/passenger_ic" />
 
                             <TextView
-                                android:id="@+id/tvDecreaseChild"
+                                android:id="@+id/minusChildBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
@@ -289,7 +289,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/tvIncreaseChild"
+                                android:id="@+id/plusChildBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
@@ -336,7 +336,7 @@
                                 app:srcCompat="@drawable/calendar_ic" />
 
                             <TextView
-                                android:id="@+id/tvDepartureDate"
+                                android:id="@+id/departureDate"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="8dp"
@@ -373,7 +373,7 @@
                                 app:srcCompat="@drawable/calendar_ic" />
 
                             <TextView
-                                android:id="@+id/tvReturnDate"
+                                android:id="@+id/returnDate"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="8dp"
@@ -406,7 +406,7 @@
                         app:srcCompat="@drawable/seat_black_ic" />
 
                     <Spinner
-                        android:id="@+id/classSP"
+                        android:id="@+id/classSp"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"
@@ -416,7 +416,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar3"
+                        android:id="@+id/progressBarClass"
                         style="?android:attr/progressBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
