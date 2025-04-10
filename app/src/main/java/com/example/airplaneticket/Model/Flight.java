@@ -19,6 +19,14 @@ public class Flight implements Serializable {
     private String to;                 // Điểm đến
     private String toShort;
 
+    public Flight() {
+    }
+
+    @Override
+    public String toString() {
+        return from;
+    }
+
     public String getAirlineLogo() {
         return airlineLogo;
     }

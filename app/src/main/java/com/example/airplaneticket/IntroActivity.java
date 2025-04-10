@@ -14,7 +14,7 @@ import com.example.airplaneticket.databinding.ActivityIntroBinding;
 
 public class IntroActivity extends BaseActivity {
     private Button btnLogin;
-private ActivityIntroBinding binding;
+    private ActivityIntroBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
