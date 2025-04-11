@@ -3,6 +3,7 @@ package com.example.airplaneticket.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,9 +27,9 @@ import java.util.Locale;
 public class MainActivity extends BaseActivity {
     //    "48:21 cua video roi nhe"
     private ActivityMainBinding binding;
-    private int adultPassenger =1 , childPassenger = 1 ;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("d MM, yyyy",Locale.ENGLISH);
-    private Calendar calendar= Calendar.getInstance();
+    private int adultPassenger = 1, childPassenger = 1;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("d MM, yyyy", Locale.ENGLISH);
+    private Calendar calendar = Calendar.getInstance();
 
 
     @Override
@@ -41,17 +43,17 @@ public class MainActivity extends BaseActivity {
         initClassSeat();
         initDatePicup();
         setVariable();
+        setupBottomNavigation();
     }
 
     private void setVariable() {
         binding.btnSearch.setOnClickListener(view -> {
-            Intent intent= new Intent(MainActivity.this, SearchActivity.class);
-            intent.putExtra("from",((Location)binding.fromSp.getSelectedItem()).getName());
-            intent.putExtra("to",((Location)binding.toSp.getSelectedItem()).getName());
-            intent.putExtra("date",binding.departureDate.getText().toString());
-            intent.putExtra("numPassenger",adultPassenger+childPassenger);
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            intent.putExtra("from", ((Location) binding.fromSp.getSelectedItem()).getName());
+            intent.putExtra("to", ((Location) binding.toSp.getSelectedItem()).getName());
+            intent.putExtra("date", binding.departureDate.getText().toString());
+            intent.putExtra("numPassenger", adultPassenger + childPassenger);
             startActivity(intent);
-
         });
     }
 
@@ -61,7 +63,7 @@ public class MainActivity extends BaseActivity {
         binding.departureDate.setText(currentDate);
 
         Calendar calendarTommorow = Calendar.getInstance();
-        calendarTommorow.add(Calendar.DAY_OF_YEAR,1);
+        calendarTommorow.add(Calendar.DAY_OF_YEAR, 1);
         String tommorowDate = dateFormat.format(calendarTommorow.getTime());
         binding.returnDate.setText(tommorowDate);
 
@@ -75,7 +77,7 @@ public class MainActivity extends BaseActivity {
         list.add(" Business Class");
         list.add("First Class");
         list.add("Economy Class");
-        ArrayAdapter<String> adapter =new ArrayAdapter<>(MainActivity.this, R.layout.sp_item,list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.sp_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.classSp.setAdapter(adapter);
         binding.progressBarClass.setVisibility((View.GONE));
@@ -84,23 +86,23 @@ public class MainActivity extends BaseActivity {
     private void initPassengers() {
         binding.plusAdultBtn.setOnClickListener(v -> {
             adultPassenger++;
-            binding.tvAdult.setText(adultPassenger + "Adult");
+            binding.tvAdult.setText(adultPassenger + " Adult");
         });
         binding.minusAdultBtn.setOnClickListener(v -> {
-            if(adultPassenger>1){
+            if (adultPassenger > 1) {
                 adultPassenger--;
-                binding.tvAdult.setText(adultPassenger + "Adult");
+                binding.tvAdult.setText(adultPassenger + " Adult");
             }
         });
 
         binding.plusChildBtn.setOnClickListener(view -> {
-            childPassenger ++;
-            binding.tvChild.setText(childPassenger + "Child");
+            childPassenger++;
+            binding.tvChild.setText(childPassenger + " Child");
         });
         binding.minusChildBtn.setOnClickListener(v -> {
-            if(childPassenger>0){
+            if (childPassenger > 0) {
                 childPassenger--;
-                binding.tvChild.setText(childPassenger+ "Child");
+                binding.tvChild.setText(childPassenger + " Child");
             }
         });
     }
@@ -109,7 +111,7 @@ public class MainActivity extends BaseActivity {
         binding.progressBarFrom.setVisibility(View.VISIBLE);
         binding.ProgressBarTo.setVisibility(View.VISIBLE);
 
-        DatabaseReference myRef =database.getReference("Locations");  // Giới hạn số lượng dữ liệu tải về
+        DatabaseReference myRef = database.getReference("Locations");
 
         ArrayList<Location> list = new ArrayList<>();
 
@@ -121,16 +123,13 @@ public class MainActivity extends BaseActivity {
                         list.add(issue.getValue(Location.class));
                     }
 
-                    // Tạo Adapter tùy chỉnh cho Spinner
                     ArrayAdapter<Location> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.sp_item, list);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     binding.fromSp.setAdapter(adapter);
                     binding.toSp.setAdapter(adapter);
                     binding.fromSp.setSelection(1);
 
-                    // Ẩn ProgressBar sau khi tải xong
                     binding.progressBarFrom.setVisibility(View.GONE);
                     binding.ProgressBarTo.setVisibility(View.GONE);
                 }
@@ -138,25 +137,49 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Handle error
+                Log.e("MainActivity", "Database error: " + error.getMessage());
             }
-
-
         });
     }
 
-    private void ShowDatePickerDialog(TextView textView){
+    private void ShowDatePickerDialog(TextView textView) {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,(view,selectedYear,selectedMonth,selectedDay)->{
-            calendar.set(selectedYear,selectedMonth,selectedDay);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, selectedYear, selectedMonth, selectedDay) -> {
+            calendar.set(selectedYear, selectedMonth, selectedDay);
             String formattedDate = dateFormat.format(calendar.getTime());
             textView.setText(formattedDate);
-        }, year , month , day);
+        }, year, month, day);
         datePickerDialog.show();
     }
 
+    private void setupBottomNavigation() {
+        ChipNavigationBar navigationBar = findViewById(R.id.bottomNavigation);
+        navigationBar.setItemSelected(R.id.home, true);
+        if (navigationBar != null) {
+            navigationBar.setItemSelected(R.id.home, true);
 
+            navigationBar.setOnItemSelectedListener(id -> {
+                if (id == R.id.home) {
+                    return;
+                } else if (id == R.id.explore) {
+                    Log.d("MainActivity", "Explore clicked");
+                    // Implement explore functionality
+                } else if (id == R.id.bookmark) {
+                    Log.d("MainActivity", "Bookmark clicked");
+                    // Implement bookmark functionality
+                } else if (id == R.id.profile) {
+                    Log.d("MainActivity", "Profile clicked");
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                    // Add this after startActivity() calls in both activities
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+            });
+        } else {
+            Log.e("MainActivity", "Bottom navigation view not found");
+        }
+    }
 }

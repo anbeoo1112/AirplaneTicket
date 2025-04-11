@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AirplaneTicket"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.TicketDetailActivity"
             android:exported="false" />
         <activity

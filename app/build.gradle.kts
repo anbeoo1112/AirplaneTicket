@@ -64,4 +64,8 @@ dependencies {
 
     // RecyclerView để hiển thị danh sách chuyến bay
     implementation("androidx.recyclerview:recyclerview:1.2.1")
+
+    implementation("com.google.firebase:firebase-auth:21.0.3")
+    // Google Sign-In
+    implementation("com.google.android.gms:play-services-auth:19.2.0")
 }

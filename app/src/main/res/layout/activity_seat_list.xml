@@ -73,6 +73,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="100dp">
 
+                <ImageView
+                    android:id="@+id/iv_airplane_seat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/airple_seat" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_seat_list"
                     android:layout_width="0dp"
@@ -84,15 +92,6 @@
                     app:layout_constraintEnd_toEndOf="@+id/iv_airplane_seat"
                     app:layout_constraintStart_toStartOf="@+id/iv_airplane_seat"
                     app:layout_constraintTop_toTopOf="@+id/iv_airplane_seat" />
-
-                <ImageView
-                    android:id="@+id/iv_airplane_seat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/airple_seat" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

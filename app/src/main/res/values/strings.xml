@@ -6,4 +6,6 @@
     <string name="get_started">Get Started</string>
     <string name="from">From</string>
     <string name="to">To</string>
+    <string name="default_web_client_id">913558997398-i5o9chf7cocqp9l9rv0lqcltunh6tg4m.apps.googleusercontent.com</string>
+    <string name="please_wait">\n</string>
 </resources>
