@@ -1,4 +1,4 @@
-package com.example.airplaneticket;
+package com.example.airplaneticket.Activity;
 
 import android.os.Bundle;
 import android.view.View;

@@ -1,7 +1,6 @@
-package com.example.airplaneticket;
+package com.example.airplaneticket.Activity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

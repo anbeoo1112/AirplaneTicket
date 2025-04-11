@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.airplaneticket.Model.Flight;
-import com.example.airplaneticket.SearchActivity;
-import com.example.airplaneticket.SeatListActivity;
+import com.example.airplaneticket.Activity.SeatListActivity;
 import com.example.airplaneticket.databinding.ViewholderFlightBinding;
 
 import java.util.ArrayList;
