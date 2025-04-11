@@ -1,21 +1,14 @@
-package com.example.airplaneticket;
+package com.example.airplaneticket.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.example.airplaneticket.Adapter.SeatAdapter;
 import com.example.airplaneticket.Model.Flight;
 import com.example.airplaneticket.Model.Seat;
-import com.example.airplaneticket.databinding.ActivityIntroBinding;
 import com.example.airplaneticket.databinding.ActivitySeatListBinding;
 
 import java.text.DecimalFormat;
@@ -101,8 +94,11 @@ public class SeatListActivity extends BaseActivity {
                     public void Return(String selectedSeat, int num) {
                         binding.tvSeatCount.setText(num + " Seat Selected ");
                         binding.nameSelectedSeat.setText(selectedSeat);
-                        DecimalFormat df = new DecimalFormat("#,##");
-                        price = (Double.valueOf(df.format(num * flight.getPrice())));
+                        DecimalFormat df = new DecimalFormat("#,##0.00");
+                        String formattedPrice = df.format(num * flight.getPrice()).replace(",", ".");
+
+                        // Chuyển giá trị thành Double sau khi thay thế dấu phẩy
+                        price = Double.valueOf(formattedPrice);
                         SeatListActivity.this.num = num;
                         binding.tvPrice.setText("$" + price);
                     }
