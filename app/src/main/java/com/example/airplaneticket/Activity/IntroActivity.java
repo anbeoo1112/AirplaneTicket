@@ -1,4 +1,4 @@
-package com.example.airplaneticket;
+package com.example.airplaneticket.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.airplaneticket.R;
 import com.example.airplaneticket.databinding.ActivityIntroBinding;
 
 public class IntroActivity extends BaseActivity {
