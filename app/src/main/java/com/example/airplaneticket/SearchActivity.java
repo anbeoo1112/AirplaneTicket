@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.airplaneticket.Activity.BaseActivity;
 import com.example.airplaneticket.Adapter.FlightAdapter;
 import com.example.airplaneticket.Model.Flight;
 import com.example.airplaneticket.databinding.ActivitySearch2Binding;

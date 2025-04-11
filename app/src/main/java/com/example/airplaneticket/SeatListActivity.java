@@ -2,17 +2,12 @@ package com.example.airplaneticket;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.airplaneticket.Activity.BaseActivity;
 import com.example.airplaneticket.Adapter.SeatAdapter;
 import com.example.airplaneticket.Model.Flight;
 import com.example.airplaneticket.Model.Seat;
-import com.example.airplaneticket.databinding.ActivityIntroBinding;
 import com.example.airplaneticket.databinding.ActivitySeatListBinding;
 
 import java.text.DecimalFormat;
