@@ -30,6 +30,10 @@
             android:name=".Activity.SeatListActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.RegisterActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".Activity.SearchActivity"
             android:exported="false" />
         <activity

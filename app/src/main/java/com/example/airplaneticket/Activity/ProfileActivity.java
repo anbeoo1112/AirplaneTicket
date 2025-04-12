@@ -116,8 +116,10 @@ public class ProfileActivity extends BaseActivity {
             // Sign out from Firebase
             mAuth.signOut();
 
-            // Return to login screen
-            startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+            Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // This clears the activity stack
+            startActivity(intent);
+
             finish();
         });
 

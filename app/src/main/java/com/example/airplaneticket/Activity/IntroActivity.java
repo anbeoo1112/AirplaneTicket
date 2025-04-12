@@ -23,7 +23,7 @@ public class IntroActivity extends BaseActivity {
         setContentView(binding.getRoot());
         binding.button.setOnClickListener(v -> {
             // Handle button click
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, RegisterActivity.class));
         });
         btnLogin = (Button) findViewById(R.id.button2);
         btnLogin.setOnClickListener(v -> {
